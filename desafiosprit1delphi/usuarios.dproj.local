@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/01/13 17:13:37.000.396,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/13 17:18:16.000.381,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/13 17:23:42.000.121,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/13 17:38:34.000.299,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/13 17:43:40.000.994,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/13 18:54:46.000.161,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/14 13:13:46.000.278,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/14 13:14:59.000.237,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/14 13:17:45.000.488,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/30 11:43:15.000.156,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/13 10:13:26.000.574,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/13 10:30:47.000.785,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/13 10:34:52.000.859,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/19 10:20:26.000.883,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/19 10:27:53.000.315,=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/02/19 10:28:25.000.822,D:\Charles\Projetos MainFrame\idecobol\desafiosprit1delphi\fontes\U_DM.dfm=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2024/02/19 10:28:25.000.822,D:\Charles\Projetos MainFrame\idecobol\desafiosprit1delphi\fontes\U_DM.pas=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/02/19 10:29:00.000.603,D:\Charles\Projetos MainFrame\idecobol\desafiosprit1delphi\fontes\U_formusuarios.dfm=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/02/19 10:29:00.000.603,D:\Charles\Projetos MainFrame\idecobol\desafiosprit1delphi\fontes\U_formusuarios.pas=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/19 10:29:14.000.313,D:\Charles\Projetos MainFrame\idecobol\desafiosprit1delphi\usuarios.dproj=C:\Users\Charles Nunes\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

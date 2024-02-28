@@ -1,0 +1,132 @@
+unit U_DM;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.SQLite,
+  FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.VCLUI.Wait, Data.DB,
+  FireDAC.Comp.Client, Inifiles;
+
+type
+  TDM = class(TDataModule)
+    FDConnection1: TFDConnection;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DM: TDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDM.DataModuleCreate(Sender: TObject);
+var ArquivoINI:tinifile;
+begin
+ if FileExists(ExtractFilePath(Application.ExeName)+'config.ini') then
+     begin
+        ArquivoINI := TIniFile.Create('./config.ini');
+          tipoconexao:=ArquivoINI.ReadString('CONEXAO','T_BASE','');
+           //Application.MessageBox(pchar(tipoconexao),'Erro',MB_ICONERROR);
+           if tipoconexao='SQLITE' then
+              begin
+                //database_local:=ArquivoINI.ReadString('User','caminho','');
+                database_local:= ExtractFilePath(Application.ExeName)+'\dados\dados.db';
+                database_web:=ArquivoINI.ReadString('CONEXAOWEB','databaseweb','');
+                porta_web:=ArquivoINI.ReadString('CONEXAOWEB','porta','');
+                usuario_web:=ArquivoINI.ReadString('CONEXAOWEB','usuario','');
+                host_web:=ArquivoINI.ReadString('CONEXAOWEB','host','');
+
+                ArquivoINI.Free;
+                dm.conexao.Protocol:='sqlite-3';
+                dm.conexao.Database:=database_local;
+                dm.conexao.Connected:=true;
+              end;
+           if (tipoconexao='MYSQL') or (tipoconexao='MYSQL5.7') then
+              begin
+                database_local:=ArquivoINI.ReadString('CONEXAO','database','');
+                porta_local:=ArquivoINI.ReadString('CONEXAO','porta','');
+                usuario_local:=ArquivoINI.ReadString('CONEXAO','usuario','');
+                host_local:=ArquivoINI.ReadString('CONEXAO','host','');
+                database_web:=ArquivoINI.ReadString('CONEXAOWEB','databaseweb','');
+                porta_web:=ArquivoINI.ReadString('CONEXAOWEB','porta','');
+                usuario_web:=ArquivoINI.ReadString('CONEXAOWEB','usuario','');
+                host_web:=ArquivoINI.ReadString('CONEXAOWEB','host','');
+                ArquivoINI.Free;
+                dm.conexao.Database:=database_local;
+                dm.conexao.HostName:=host_local;
+                dm.conexao.Port:=strtoint(porta_local);
+                dm.conexao.User:=usuario_local;
+                dm.conexao.Protocol:='mysql-5';
+
+                if usuario_local='root' then
+                  dm.conexao.Password:='@Mweb250999'
+                else
+                  dm.conexao.Password:='@Mweb{}250999';
+
+                dm.conexao.Connected:=true;
+              end;
+
+
+
+
+            if ConectadoInternet then
+              begin
+                dm.conexaoweb.Hostname:=host_web;
+                dm.CONEXAOweb.Port:=strtoint(porta_web);
+                dm.CONEXAOweb.user:=usuario_web;
+                dm.conexaoweb.Database:=database_web;
+
+                if usuario_web='root' then
+                  dm.conexaoweb.Password:='@Mweb250999'
+                else
+                  dm.conexaoweb.Password:='@Mweb{}250999';
+                dm.conexaoweb.Connected:=true;
+              end
+            else
+             begin
+              dm.conexaoweb.Connected:=false;
+              exit;
+             end;
+
+
+
+
+
+
+
+
+            if dm.conexao.Connected then
+               Begin
+                  formprincipal.StatusBar1.Panels[0].Text:='CONECTADO';
+                  ZQEMPRESA.Open;
+               End
+            else
+               Begin
+                 formprincipal.StatusBar1.Panels[0].Text:='DESCONECTADO';
+               End;
+
+     End
+  Else
+     Begin
+       Application.MessageBox('Arquivo Config.ini inexistente !','Erro',MB_ICONERROR);
+       Application.Terminate;
+     End;
+except
+     Begin
+       Application.MessageBox('Não foi possível conectar a base de dados!','Erro',MB_ICONERROR);
+       Application.Terminate;
+     End;
+end;
+end;
+
+end.
